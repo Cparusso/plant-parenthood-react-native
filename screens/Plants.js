@@ -19,7 +19,7 @@ export default function Plants(props) {
     <ScrollView>
     <MainApp>
       <Header>Plants</Header>
-        { plants ? plants.map(plant => <PlantCard key={plant.id} plant={plant} />) : <Text>Growing Plants...</Text> }
+        { plants ? plants.map(plant => <PlantCard navigation={props.navigation} key={plant.id} plant={plant} />) : <Text>Growing Plants...</Text> }
     </MainApp>
     </ScrollView>
   )

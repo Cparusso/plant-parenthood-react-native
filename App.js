@@ -2,18 +2,33 @@ import React from 'react'
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import HomeScreen from './screens/HomeScreen'
-import LandingPage from './screens/LandingPage'
-import Plants from './screens/Plants'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-const MainNavigator = createStackNavigator({
-  Home: {screen: HomeScreen},
-  LandingPage: {screen: LandingPage},
-  Plants: {screen: Plants},
-});
+import PlantParenthoodApp from './PlantParenthoodApp'
+
+const initialState = {
+  counter: 0,
+  plants: {}
+}
+
+const reducer = (state = initialState, action) => {
+  switch(action.type)
+  {
+    case 'INCREASE_COUNTER': return{counter: state.counter+1}
+    case 'DECREASE_COUNTER': return{counter: state.counter-1}
+  }
+  return state
+}
+
+const store = createStore(reducer)
 
 // Tentative Color Scheme: https://coolors.co/50ffb1-48a9a6-35393c-4bc6b9-546d64
 
-const App = createAppContainer(MainNavigator);
-
-export default App;
+export default function App() {
+  return (
+    <Provider store={ store } >
+      <PlantParenthoodApp />
+    </Provider>
+  )
+}

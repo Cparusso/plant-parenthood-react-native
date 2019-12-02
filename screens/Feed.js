@@ -2,16 +2,13 @@ import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import styled from 'styled-components'
 
-export default function LandingPage(props) {
+export default function Feed(props) {
 
   const { navigate, push, goBack, popToTop } = props.navigation;
 
   return (
     <MainApp>
-      <Header>Landing Page</Header>
-      <Button onPress={() => push('LandingPage')} title="Land"/>
-      <Button onPress={() => goBack()} title="Back"/>
-      <Button onPress={() => popToTop()} title="Home"/>
+      <Header>Feed</Header>
       <Button onPress={() => navigate('Plants')} title="Plants"/>
     </MainApp>
   )
