@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { StyleSheet, Text, View, Button } from 'react-native'
 import styled from 'styled-components'
 
@@ -9,7 +10,6 @@ export default function Feed(props) {
   return (
     <MainApp>
       <Header>Feed</Header>
-      <Button onPress={() => navigate('Plants')} title="Plants"/>
     </MainApp>
   )
 }

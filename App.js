@@ -1,11 +1,9 @@
 import React from 'react'
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import PlantParenthoodApp from './PlantParenthoodApp'
+import PlantParenthoodApp from './Navigators/PlantParenthoodApp'
 
 const initialState = {
   counter: 0,

@@ -13,7 +13,7 @@ function HomeScreen(props) {
       <Header>Parenthood</Header>
       <ButtonsContainer>
         <Button title="Sign up"/>
-        <Button onPress={() => navigate('Feed')} title="Log in"/>
+        <Button onPress={() => navigate('Tabs')} title="Log in"/>
       </ButtonsContainer>
       <View style={{flexDirection: 'row'}}>
       <TouchableOpacity onPress={() => props.decreaseCounter()} >
