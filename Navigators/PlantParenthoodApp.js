@@ -3,11 +3,13 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import HomeScreen from '../screens/HomeScreen'
-import MainTabNavigator from './MainTabNavigator'
+import DrawerNavigator from './DrawerNavigator'
+// import MainTabNavigator from './MainTabNavigator'
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
-  Tabs: {screen: MainTabNavigator},
+  Drawers: {screen: DrawerNavigator},
+  // Tabs: {screen: MainTabNavigator},
 }, {
   initialRouteName: 'Home'
 });

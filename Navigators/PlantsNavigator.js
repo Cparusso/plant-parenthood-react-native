@@ -9,7 +9,8 @@ const MainNavigator = createStackNavigator({
   Plants: {screen: Plants},
   Plant: {screen: PlantDetails},
 }, {
-  initialRouteName: 'Plants'
+  initialRouteName: 'Plants',
+  headerMode: 'none'
 });
 
 // Tentative Color Scheme: https://coolors.co/50ffb1-48a9a6-35393c-4bc6b9-546d64
