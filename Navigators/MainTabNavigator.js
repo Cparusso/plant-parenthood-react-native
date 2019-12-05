@@ -8,6 +8,9 @@ import PlantsNavigator from './PlantsNavigator'
 const TabNavigator = createBottomTabNavigator({
   Feed: {screen: Feed},
   Plants: {screen: PlantsNavigator},
-});
+},{
+  resetOnBlur: true,
+}
+);
 
 export default createAppContainer(TabNavigator);

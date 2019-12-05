@@ -5,8 +5,7 @@ import styled from 'styled-components';
 
 const PlantCard = ({ plant, navigation }) => {
   return (
-    <View>
-      <TouchableOpacity onPress={() => (
+      <Card onPress={() => (
         navigation.navigate('Plant', {
           plantId: plant.id,
           commonName: plant.common_name,
@@ -14,23 +13,19 @@ const PlantCard = ({ plant, navigation }) => {
           picture: plant.picture,
         })
       )}>
-      <Card>
-        <CardImage source={{uri: plant.picture}}/>
-        <View>
-            <Title>{plant.common_name.split(' / ')[0]}</Title>
-            <BinomialName>{plant.binomial_name}</BinomialName>
-        </View>
-        </Card>
-      </TouchableOpacity>
-    </View>
+          <CardImage source={{uri: plant.picture}}/>
+          <View>
+              <Title>{plant.common_name.split(' / ')[0]}</Title>
+              <BinomialName>{plant.binomial_name}</BinomialName>
+          </View>
+      </Card>
   )
 }
 
 export default PlantCard
 
-const Card = styled.View`
+const Card = styled.TouchableOpacity`
     height: 100px;
-    width: 400px;
     border: solid black 1px;
     border-radius: 8px;
     margin-top: 20px;

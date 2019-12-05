@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Button, ScrollView } from 'react-native'
+import { Text, View, Button, ScrollView, Dimensions } from 'react-native'
 import styled from 'styled-components'
 
 import PlantCard from './PlantCard'
@@ -15,13 +15,15 @@ export default function Plants(props) {
     .catch(err => console.log(err))
   }, { setPlants })
 
+  console.log(plants.length)
+
   return (
-    <ScrollView>
     <MainApp>
-      <Header>Plants</Header>
-        { plants ? plants.map(plant => <PlantCard navigation={props.navigation} key={plant.id} plant={plant} />) : <Text>Growing Plants...</Text> }
-    </MainApp>
+        <Header>Plants</Header>
+        <ScrollView>
+          { plants.length !== 0 ? plants.map(plant => <PlantCard navigation={props.navigation} key={plant.id} plant={plant} />) : <Text>Growing Plants...</Text> }
     </ScrollView>
+  </MainApp>
   )
 }
 
@@ -36,6 +38,7 @@ const Header = styled.Text`
   font-weight: bold;
   font-size: 40;
   text-align: center;
+  margin-top: 12%;
 `
 
 const ButtonsContainer = styled.View`

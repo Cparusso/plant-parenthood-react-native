@@ -11,7 +11,11 @@ const MainNavigator = createStackNavigator({
   Drawers: {screen: DrawerNavigator},
   // Tabs: {screen: MainTabNavigator},
 }, {
-  initialRouteName: 'Home'
+  initialRouteName: 'Home',
+  headerMode: 'none',
+  defaultNavigationOptions: {
+      gesturesEnabled: false,
+    }  
 });
 
 // Tentative Color Scheme: https://coolors.co/50ffb1-48a9a6-35393c-4bc6b9-546d64

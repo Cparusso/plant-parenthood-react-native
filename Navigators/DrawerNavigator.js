@@ -7,6 +7,7 @@ import MainTabNavigator from './MainTabNavigator'
 
 const DrawerNavigator = createDrawerNavigator({
   Home: {screen: MainTabNavigator},
+},{
 });
 
 export default createAppContainer(DrawerNavigator);
