@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, View, Button, ScrollView, Dimensions } from 'react-native'
 import styled from 'styled-components'
 
-import PlantCard from './PlantCard'
-
-export default function Plants(props) {
+export default function Profile(props) {
 
   const [ plants, setPlants ] = useState([])
 
@@ -19,17 +17,10 @@ export default function Plants(props) {
 
   return (
     <MainApp>
-      <Header>Plants</Header>
-      <Garden>
-        { plants.length !== 0 ? plants.map(plant => <PlantCard navigation={props.navigation} key={plant.id} plant={plant} />) : <Text>Growing Plants...</Text> }
-      </Garden>
+      <Header>Profile</Header>
     </MainApp>
   )
 }
-
-const Garden = styled.ScrollView`
-  width: 100%;
-`
 
 const MainApp = styled.View`
   flex: 1;

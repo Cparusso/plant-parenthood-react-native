@@ -26,9 +26,9 @@ export default PlantCard
 
 const Card = styled.TouchableOpacity`
     height: 100px;
-    border: solid black 1px;
+    width: 90%;
+    margin: auto;
     border-radius: 8px;
-    margin-top: 20px;
     flex-direction: row;
     align-items: center;
 `
