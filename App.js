@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { createStore } from 'redux'
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
 import PlantParenthoodApp from './Navigators/PlantParenthoodApp'
@@ -13,8 +14,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type)
   {
-    case 'INCREASE_COUNTER': return{counter: state.counter+1}
-    case 'DECREASE_COUNTER': return{counter: state.counter-1}
+    case 'INCREASE_COUNTER': return{counter: state.counter + 1}
+    case 'DECREASE_COUNTER': return{counter: state.counter - 1}
   }
   return state
 }

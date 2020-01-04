@@ -9,7 +9,7 @@ export default function Plants(props) {
   const [ plants, setPlants ] = useState([])
 
   useEffect(() => {
-    fetch('http://taco.local:3000/plants')
+    fetch('http://localhost:3000/plants')
     .then(resp => resp.json())
     .then(setPlants)
     .catch(err => console.log(err))

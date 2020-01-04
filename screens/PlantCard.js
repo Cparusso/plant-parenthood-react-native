@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text, Image, View, TouchableOpacity } from 'react-native';
+import { Text, Image, View, TouchableOpacity } from 'react-native'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const PlantCard = ({ plant, navigation }) => {
   return (

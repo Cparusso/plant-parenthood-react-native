@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 
 function HomeScreen(props) {
-  const { navigate } = props.navigation;
+  const { navigate } = props.navigation
 
   return (
     <MainApp>
