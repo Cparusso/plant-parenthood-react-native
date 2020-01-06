@@ -15,8 +15,6 @@ export default function Plants(props) {
     .catch(err => console.log(err))
   }, { setPlants })
 
-  console.log(plants.length)
-
   return (
     <MainApp>
       <Header>Plants</Header>

@@ -3,7 +3,7 @@ import { Text, Image, View, TouchableOpacity } from 'react-native'
 
 import styled from 'styled-components'
 
-const PlantCard = ({ plant, navigation }) => {
+const PlantCard = ({ plant, navigation, userPlant }) => {
   return (
       <Card onPress={() => (
         navigation.navigate('Plant', {
@@ -15,6 +15,9 @@ const PlantCard = ({ plant, navigation }) => {
       )}>
           <CardImage source={{uri: plant.picture}}/>
           <View>
+              { userPlant &&
+                <GivenName>{userPlant.given_name}</GivenName>
+              }
               <Title>{plant.common_name.split(' / ')[0]}</Title>
               <BinomialName>{plant.binomial_name}</BinomialName>
           </View>
@@ -43,6 +46,12 @@ const CardImage = styled.Image`
 const Title = styled.Text`
     color: #35393c;
     font-size: 24px;
+    font-weight: 600;
+`
+
+const GivenName = styled.Text`
+    color: #35393c;
+    font-size: 32px;
     font-weight: 600;
 `
 

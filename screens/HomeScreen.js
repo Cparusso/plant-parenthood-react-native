@@ -15,35 +15,36 @@ function HomeScreen(props) {
         <Button title="Sign up"/>
         <Button onPress={() => navigate('Drawers')} title="Log in"/>
       </ButtonsContainer>
-      <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity onPress={() => props.decreaseCounter()} >
-        <Text>Decrease</Text>
-      </TouchableOpacity>
-      <Text>
-        {props.counter}
-      </Text>
-      <TouchableOpacity onPress={() => props.increaseCounter()} >
-        <Text>Increase</Text>
-      </TouchableOpacity>
-      </View>
     </MainApp>
   )
 }
 
-function mapStateToProps(state) {
-  return {
-    counter: state.counter
-  }
-}
+// <View style={{flexDirection: 'row'}}>
+//   <TouchableOpacity onPress={() => props.decreaseCounter()} >
+//     <Text>Decrease</Text>
+//   </TouchableOpacity>
+//   <Text>
+//     {props.counter}
+//   </Text>
+//   <TouchableOpacity onPress={() => props.increaseCounter()} >
+//     <Text>Increase</Text>
+//   </TouchableOpacity>
+// </View>
+// function mapStateToProps(state) {
+//   return {
+//     counter: state.counter
+//   }
+// }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    increaseCounter: () => dispatch({type: "INCREASE_COUNTER"}),
-    decreaseCounter: () => dispatch({type: "DECREASE_COUNTER"})
-  }
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     increaseCounter: () => dispatch({type: "INCREASE_COUNTER"}),
+//     decreaseCounter: () => dispatch({type: "DECREASE_COUNTER"})
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+export default (HomeScreen)
+// export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
 
 const MainApp = styled.View`
   flex: 1;

@@ -7,8 +7,8 @@ import Profile from '../screens/Profile'
 import PlantsNavigator from './PlantsNavigator'
 
 const TabNavigator = createBottomTabNavigator({
-  Plants: {screen: PlantsNavigator},
   Profile: {screen: Profile},
+  Plants: {screen: PlantsNavigator},
   Feed: {screen: Feed},
 }, {
   resetOnBlur: true,
