@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { Text, View, Button, ScrollView, Image } from 'react-native'
 import styled from 'styled-components'
 
-export default function PlantDetails({ navigation }) {
+export default function UserPlantDetails({ navigation }) {
 
-  const commonName = navigation.getParam('commonName').split(' / ')[0]
-
+  const plantInfo = navigation.getParam('plantInfo')
+  console.log(plantInfo)
   return (
     <ScrollView>
     <MainApp>
-      <BigPic source={{uri: navigation.getParam('picture')}}/>
-      <Header>{ commonName }</Header>
+      <BigPic source={{uri: plantInfo.picture}}/>
+      <Header>{ plantInfo.givenName }</Header>
     </MainApp>
     </ScrollView>
   )

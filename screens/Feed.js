@@ -10,6 +10,7 @@ export default function Feed(props) {
   return (
     <MainApp>
       <Header>Feed</Header>
+      <Text>(Coming soon)</Text>
     </MainApp>
   )
 }

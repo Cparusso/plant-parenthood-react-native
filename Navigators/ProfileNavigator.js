@@ -7,7 +7,7 @@ import UserPlantDetails from '../screens/UserPlantDetails'
 
 const MainNavigator = createStackNavigator({
   Profile: {screen: Profile},
-  Plant: {screen: UserPlantDetails},
+  UserPlant: {screen: UserPlantDetails},
 }, {
   initialRouteName: 'Profile',
   headerMode: 'none',

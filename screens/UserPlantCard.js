@@ -3,23 +3,22 @@ import { Text, Image, View, TouchableOpacity } from 'react-native'
 
 import styled from 'styled-components'
 
-const UserPlantCard = ({ plant, navigation, userPlant }) => {
+const UserPlantCard = ({ navigation, userPlant }) => {
   return (
       <Card onPress={() => (
-        navigation.navigate('Plant', {
-          plantId: plant.id,
-          commonName: plant.common_name,
-          binomialName: plant.binomial_name,
-          picture: plant.picture,
+        navigation.navigate('UserPlant', {
+          plantInfo: {plantId: userPlant.plant.id,
+          givenName: userPlant.given_name,
+          commonName: userPlant.plant.common_name,
+          binomialName: userPlant.plant.binomial_name,
+          picture: userPlant.plant.picture,}
         })
       )}>
-          <CardImage source={{uri: plant.picture}}/>
+          <CardImage source={{uri: "https://superawesomevectors.com/wp-content/uploads/2017/04/potted-plant-flat-vector-800x566.jpg"}}/>
           <View>
-              { userPlant &&
-                <GivenName>{userPlant.given_name}</GivenName>
-              }
-              <Title>{plant.common_name.split(' / ')[0]}</Title>
-              <BinomialName>{plant.binomial_name}</BinomialName>
+              <GivenName>{userPlant.given_name}</GivenName>
+              <Title>{userPlant.plant.common_name.split(' / ')[0]}</Title>
+              <BinomialName>{userPlant.plant.binomial_name}</BinomialName>
           </View>
       </Card>
   )

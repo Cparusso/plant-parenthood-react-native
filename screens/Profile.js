@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, View, Button, ScrollView, Dimensions, Image } from 'react-native'
 import styled from 'styled-components'
 
-import PlantCard from './PlantCard'
+import UserPlantCard from './UserPlantCard'
 
 export default function Profile(props) {
 
@@ -26,7 +26,7 @@ export default function Profile(props) {
       }
       {user.user_plants &&
         <Garden>
-          { user.user_plants.length !== 0 ? user.user_plants.map(userPlant => <PlantCard navigation={props.navigation} key={userPlant.id} plant={userPlant.plant} userPlant={userPlant}/>) : <Text>Growing Plants...</Text> }
+          { user.user_plants.length !== 0 ? user.user_plants.map(userPlant => <UserPlantCard navigation={props.navigation} key={userPlant.id} userPlant={userPlant}/>) : <Text>Growing Plants...</Text> }
         </Garden>
       }
     </MainApp>

@@ -3,7 +3,7 @@ import { Text, Image, View, TouchableOpacity } from 'react-native'
 
 import styled from 'styled-components'
 
-const PlantCard = ({ plant, navigation, userPlant }) => {
+const PlantCard = ({ plant, navigation }) => {
   return (
       <Card onPress={() => (
         navigation.navigate('Plant', {
@@ -15,9 +15,6 @@ const PlantCard = ({ plant, navigation, userPlant }) => {
       )}>
           <CardImage source={{uri: plant.picture}}/>
           <View>
-              { userPlant &&
-                <GivenName>{userPlant.given_name}</GivenName>
-              }
               <Title>{plant.common_name.split(' / ')[0]}</Title>
               <BinomialName>{plant.binomial_name}</BinomialName>
           </View>
