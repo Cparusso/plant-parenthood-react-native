@@ -4,13 +4,35 @@ import styled from 'styled-components'
 
 export default function PlantDetails({ navigation }) {
 
+  const {binomialName, picture, plantId} = navigation.state.params
+
   const commonName = navigation.getParam('commonName').split(' / ')[0]
+
+  const createUserPlant = () => {
+    console.log("HELLO", navigation.state.params)
+    fetch('http://localhost:3000/user_plants', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        picture: picture,
+        given_name: "Banana",
+        date_received: "071819",
+        bio: "This is a plant that I own.",
+        plant_id: plantId,
+        user_id: 9
+      })})
+      .then((response) => response.json())
+      .then((data) => console.log("HELLO LOOK AT THIS PLZ:", data))
+    }
 
   return (
     <ScrollView>
     <MainApp>
       <BigPic source={{uri: navigation.getParam('picture')}}/>
       <Header>{ commonName }</Header>
+      <Header onPress={() => createUserPlant()}>+</Header>
     </MainApp>
     </ScrollView>
   )

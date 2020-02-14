@@ -7,14 +7,17 @@ const UserPlantCard = ({ navigation, userPlant }) => {
   return (
       <Card onPress={() => (
         navigation.navigate('UserPlant', {
-          plantInfo: {plantId: userPlant.plant.id,
-          givenName: userPlant.given_name,
-          commonName: userPlant.plant.common_name,
-          binomialName: userPlant.plant.binomial_name,
-          picture: userPlant.plant.picture,}
+          plantInfo:
+            {
+              plantId: userPlant.plant.id,
+              givenName: userPlant.given_name,
+              commonName: userPlant.plant.common_name,
+              binomialName: userPlant.plant.binomial_name,
+              picture: userPlant.plant.picture
+            }
         })
       )}>
-          <CardImage source={{uri: "https://superawesomevectors.com/wp-content/uploads/2017/04/potted-plant-flat-vector-800x566.jpg"}}/>
+          <CardImage source={{uri: userPlant.plant.picture}}/>
           <View>
               <GivenName>{userPlant.given_name}</GivenName>
               <Title>{userPlant.plant.common_name.split(' / ')[0]}</Title>
