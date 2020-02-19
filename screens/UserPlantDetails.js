@@ -5,12 +5,22 @@ import styled from 'styled-components'
 export default function UserPlantDetails({ navigation }) {
 
   const plantInfo = navigation.getParam('plantInfo')
-  console.log(plantInfo)
+
+  const deleteUserPlant = () => {
+    // fetch('http://localhost:3000/user_plants', {
+    fetch(`http://taco.local:3000/user_plants/${plantInfo.userPlantId}`, {
+      method: 'DELETE',
+    })
+
+    navigation.navigate('Profile')
+  }
+
   return (
     <ScrollView>
     <MainApp>
       <BigPic source={{uri: plantInfo.picture}}/>
       <Header>{ plantInfo.givenName }</Header>
+      <Header onPress={() => deleteUserPlant()}>-</Header>
     </MainApp>
     </ScrollView>
   )

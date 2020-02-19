@@ -9,8 +9,8 @@ export default function PlantDetails({ navigation }) {
   const commonName = navigation.getParam('commonName').split(' / ')[0]
 
   const createUserPlant = () => {
-    console.log("HELLO", navigation.state.params)
-    fetch('http://localhost:3000/user_plants', {
+    // fetch('http://localhost:3000/user_plants', {
+    fetch('http://taco.local:3000/user_plants', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -21,10 +21,9 @@ export default function PlantDetails({ navigation }) {
         date_received: "071819",
         bio: "This is a plant that I own.",
         plant_id: plantId,
-        user_id: 9
+        user_id: 11
       })})
       .then((response) => response.json())
-      .then((data) => console.log("HELLO LOOK AT THIS PLZ:", data))
     }
 
   return (

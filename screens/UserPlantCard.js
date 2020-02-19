@@ -9,6 +9,7 @@ const UserPlantCard = ({ navigation, userPlant }) => {
         navigation.navigate('UserPlant', {
           plantInfo:
             {
+              userPlantId: userPlant.id,
               plantId: userPlant.plant.id,
               givenName: userPlant.given_name,
               commonName: userPlant.plant.common_name,

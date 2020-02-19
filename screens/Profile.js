@@ -9,7 +9,8 @@ export default function Profile(props) {
   const [ user, setUser ] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/users/9')
+    // fetch('http://localhost:3000/users/11')
+    fetch('http://taco.local:3000/users/11')
     .then(resp => resp.json())
     .then(setUser)
     .catch(err => console.log(err))
@@ -19,8 +20,7 @@ export default function Profile(props) {
     <MainApp>
       {user.first_name && <Header>{`${user.first_name}'`}s Profile</Header>}
       {user.picture &&
-        <Image
-          style={{width: 200, height: 170}}
+        <ProfilePicture
           source={{uri: 'https://media0.giphy.com/media/l0HlRgBDnqEcOIs5q/giphy.gif'}}
         />
       }
@@ -53,4 +53,9 @@ const Header = styled.Text`
 
 const ButtonsContainer = styled.View`
   flex-direction: row;
+`
+
+const ProfilePicture = styled.Image`
+  width: 200;
+  height: 170;
 `
