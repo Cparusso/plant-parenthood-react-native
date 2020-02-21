@@ -13,6 +13,7 @@ const UserPlantCard = ({ navigation, userPlant }) => {
               plantId: userPlant.plant.id,
               givenName: userPlant.given_name,
               commonName: userPlant.plant.common_name,
+              dateWatered: userPlant.date_watered,
               binomialName: userPlant.plant.binomial_name,
               picture: userPlant.plant.picture
             }

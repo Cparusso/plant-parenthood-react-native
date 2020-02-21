@@ -21,7 +21,7 @@ export default function PlantDetails({ navigation }) {
         date_received: "071819",
         bio: "This is a plant that I own.",
         plant_id: plantId,
-        user_id: 11
+        user_id: 7
       })})
       .then((response) => response.json())
     }

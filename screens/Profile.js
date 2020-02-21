@@ -9,12 +9,12 @@ export default function Profile(props) {
   const [ user, setUser ] = useState([])
 
   useEffect(() => {
-    // fetch('http://localhost:3000/users/11')
-    fetch('http://taco.local:3000/users/11')
+    // fetch('http://localhost:3000/users/7')
+    fetch('http://taco.local:3000/users/7')
     .then(resp => resp.json())
     .then(setUser)
     .catch(err => console.log(err))
-  }, [setUser])
+  }, [])
 
   return (
     <MainApp>
