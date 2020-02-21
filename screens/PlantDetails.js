@@ -18,7 +18,6 @@ export default function PlantDetails({ navigation }) {
       body: JSON.stringify({
         picture: picture,
         given_name: "Banana",
-        date_received: "071819",
         bio: "This is a plant that I own.",
         plant_id: plantId,
         user_id: 7

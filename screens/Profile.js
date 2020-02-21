@@ -8,6 +8,8 @@ export default function Profile(props) {
 
   const [ user, setUser ] = useState([])
 
+  console.log(user);
+
   useEffect(() => {
     // fetch('http://localhost:3000/users/7')
     fetch('http://taco.local:3000/users/7')

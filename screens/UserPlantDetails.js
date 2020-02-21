@@ -20,7 +20,7 @@ export default function UserPlantDetails({ navigation }) {
     <MainApp>
       <BigPic source={{uri: plantInfo.picture}}/>
       <Header>{ plantInfo.givenName }</Header>
-      <Text>Last Watered: {plantInfo.dateWatered}</Text>
+      <Text>Last Watered: { plantInfo.dateWatered }</Text>
       <Header onPress={() => deleteUserPlant()}>⚰️</Header>
     </MainApp>
     </ScrollView>
