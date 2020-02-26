@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Text, View, Button, ScrollView, Dimensions, Image } from 'react-native'
 import styled from 'styled-components'
+import { UserStateContext } from '../context/UserStateProvider'
 
 import UserPlantCard from './UserPlantCard'
 
 export default function Profile(props) {
-
+  const { currentUserId } = useContext(UserStateContext)
   const [ user, setUser ] = useState([])
 
-  console.log(user);
-
   useEffect(() => {
-    // fetch('http://localhost:3000/users/7')
-    fetch('http://taco.local:3000/users/7')
+    // fetch('http://localhost:3000/users/9')
+    fetch(`http://taco.local:3000/users/${currentUserId}`)
+    // fetch(`http://taco.local:3000/users/9`)
     .then(resp => resp.json())
     .then(setUser)
     .catch(err => console.log(err))

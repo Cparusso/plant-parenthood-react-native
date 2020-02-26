@@ -20,7 +20,7 @@ export default function PlantDetails({ navigation }) {
         given_name: "Banana",
         bio: "This is a plant that I own.",
         plant_id: plantId,
-        user_id: 7
+        user_id: 9
       })})
       .then((response) => response.json())
     }
